@@ -20,7 +20,8 @@ public class Rectangle2D {
         this.height = other.height;
     }
     public boolean intersects(Rectangle2D other) {
-        return x+width > other.getX() && x < other.getX()+other.getWidth() && y+height > other.getY() && y < other.getY()+other.getHeight();
+        return x+width > other.getX() && x < other.getX()+other.getWidth() &&
+                y+height > other.getY() && y < other.getY()+other.getHeight();
     }
     public boolean contains(PVector point) {
         return contains(point.x,point.y);

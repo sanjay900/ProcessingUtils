@@ -97,29 +97,29 @@ public class MD2Model {
                 applet.endShape();
             }
 
-            return;
-        }
-        for (int cmdI = 0; cmdI <glcmds.length;) {
-            int cmd = (int) glcmds[cmdI++];
-            if (cmd < 0) {
-                cmd = -cmd;
-                applet.beginShape(PConstants.TRIANGLE_FAN);
-            } else {
-                applet.beginShape(PConstants.TRIANGLE_STRIP);
+        } else {
+            for (int cmdI = 0; cmdI < glcmds.length; ) {
+                int cmd = (int) glcmds[cmdI++];
+                if (cmd < 0) {
+                    cmd = -cmd;
+                    applet.beginShape(PConstants.TRIANGLE_FAN);
+                } else {
+                    applet.beginShape(PConstants.TRIANGLE_STRIP);
+                }
+                applet.texture(texture);
+                float u, v;
+                int index;
+                float[] normals;
+                for (int i = 0; i < cmd; i++) {
+                    u = glcmds[cmdI++];
+                    v = glcmds[cmdI++];
+                    index = (int) glcmds[cmdI++];
+                    applet.vertex(vertlist[index].getVert().x, vertlist[index].getVert().y, vertlist[index].getVert().z, u, v);
+                    normals = NormalTable.normalTable[vertlist[index].getLightnormalindex()];
+                    applet.normal(normals[0], normals[1], normals[2]);
+                }
+                applet.endShape();
             }
-            applet.texture(texture);
-            float u,v;
-            int index;
-            float[] normals;
-            for (int i = 0; i< cmd; i++) {
-                u = glcmds[cmdI++];
-                v = glcmds[cmdI++];
-                index = (int) glcmds[cmdI++];
-                applet.vertex(vertlist[index].getVert().x, vertlist[index].getVert().y, vertlist[index].getVert().z,u,v);
-                normals = NormalTable.normalTable[vertlist[index].getLightnormalindex()];
-                applet.normal(normals[0],normals[1],normals[2]);
-            }
-            applet.endShape();
         }
     }
     public void stopAnimation() {
