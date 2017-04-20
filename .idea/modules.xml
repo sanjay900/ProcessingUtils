@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProcessingUtils.iml" filepath="$PROJECT_DIR$/ProcessingUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProcessingUtils.iml" filepath="$PROJECT_DIR$/.idea/modules/ProcessingUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProcessingUtils_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ProcessingUtils_main.iml" group="ProcessingUtils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ProcessingUtils_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ProcessingUtils_test.iml" group="ProcessingUtils" />
     </modules>
   </component>
 </project>

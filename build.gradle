@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'net.tangentmc'
+version = '1.2'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+     maven {
+         url "https://maven.tangentmc.net/repository/victoria"
+     }
+}
+dependencies {
+    compile group: 'org.processing', name: 'core', version:'3.1.2'
+    compile group: 'org.jogamp.gluegen', name: 'gluegen-rt-main', version:'2.3.2'
+    compile group: 'org.jogamp.jogl', name: 'jogl', version:'2.3.2'
+    compile group: 'org.jogamp.jogl', name: 'jogl-all', version:'2.3.2'
+    compile group: 'org.jogamp.jogl', name: 'jogl-all-main', version:'2.3.2'
+    compile group: 'org.jogamp.jogl', name: 'newt-main', version:'2.3.2'
+    compile group: 'org.jogamp.jogl', name: 'nativewindow-main', version:'2.3.2'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version:'1.16.10'
+}
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://192.168.2.187:8081/repository/victoria/") {
+                authentication(userName: mavenUser, password: mavenPassword)
+            }
+        }
+    }
+}
