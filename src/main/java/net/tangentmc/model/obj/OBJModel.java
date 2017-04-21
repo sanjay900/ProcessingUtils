@@ -17,7 +17,7 @@ import static processing.core.PApplet.*;
  * To avoid this, we flatten them down into two models, and they render without losing frames.
  */
 public class OBJModel {
-    private PApplet __instance = ProcessingRunner.instance;
+    private PApplet __instance;
     private PShape tri;
     private PShape quad;
 
@@ -26,7 +26,8 @@ public class OBJModel {
      * @param orig the original model to clone
      * @param tex the new texture to use
      */
-    public OBJModel(OBJModel orig, PImage tex) {
+    public OBJModel(OBJModel orig, PImage tex, PApplet applet) {
+        this.__instance = applet;
         fromSimplified(orig,tex);
     }
 
@@ -35,7 +36,8 @@ public class OBJModel {
      * @param original the original model to base upon
      * @param texture the texture to use
      */
-    public OBJModel(PShape original, PImage texture) {
+    public OBJModel(PShape original, PImage texture, PApplet applet) {
+        this.__instance = applet;
         simplifyShape(original,texture);
     }
     private void fromSimplified(OBJModel simplified, PImage tex) {

@@ -16,6 +16,7 @@
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:jogl-all-main:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:newt-main:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:nativewindow-main:2.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: nz.ac.victoria.ecs:UISound:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:jogl-all:natives-android-aarch64:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:jogl-all:natives-android-armv6:2.3.2" level="project" />
     <orderEntry type="library" name="Gradle: org.jogamp.jogl:jogl-all:natives-linux-amd64:2.3.2" level="project" />
